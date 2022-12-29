@@ -1,3 +1,5 @@
+#define ESP32
+
 #include <WiFi.h>
 #include <HTTPClient.h>
 #include <Update.h>
