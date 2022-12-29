@@ -1,4 +1,4 @@
-#define ESP32
+#undef ESP8266
 
 #include <WiFi.h>
 #include <HTTPClient.h>
