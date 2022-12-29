@@ -11,7 +11,8 @@
 
 // Replace your_username/your_repo with your values (ex. axcap/Esp-GitHub-OTA)
 // This is a link to repo where your firmware updates will be pulled from
-#define RELEASE_URL "https://api.github.com/repos/axcap/Arendal_Demo/releases/latest"
+// #define RELEASE_URL "https://api.github.com/repos/axcap/Arendal_Demo/releases/latest"
+#define RELEASE_URL "https://github.com/axcap/Arendal_Demo/releases/latest"
 
 #define DELAY_MS 1000
 
@@ -21,6 +22,7 @@
 void setup()
 {
   Serial.begin(115200);
+  Serial.printf("Current version: %s\n", VERSION);
   pinMode(LED_BUILTIN, OUTPUT);
 
   setup_wifi();
@@ -29,7 +31,9 @@ void setup()
 
 void loop()
 {
+  #define DEBUG
   handle_ota(RELEASE_URL);
+  #undef DEBUG
 
   // Your code goes here
   digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on (HIGH is the voltage level)
